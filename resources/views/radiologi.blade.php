@@ -58,7 +58,7 @@
                             
                         <?php
                         $filter = $pencarian;
-                        $folder = '../';
+                        $folder = '../public/foto_radiologi/';
                         $tampil = [];
                         $proses = new RecursiveDirectoryIterator("$folder");
                         foreach(new RecursiveIteratorIterator($proses) as $file)
