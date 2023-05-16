@@ -26,7 +26,7 @@
                             @foreach($data as $item)
 
                                 <tr>
-                                    <td>{{ $item->no_mr }}</td>
+                                    <td>{{ sprintf("%06s", $item->no_mr); }}</td>
                                     <td>{{ $item->nama_pasien }}</td>
                                     <td><a href="{{ url('farmasi/detail/'.$item->no_mr) }}" target="_blank" class="btn btn-warning">Detail</a></td>
                                 </tr>
