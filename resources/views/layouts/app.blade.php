@@ -105,7 +105,7 @@
                         <h4>RIWAYAT PASIEN LABORATORIUM & RADIOLOGI</h4>
                         <a href="{{ url('laboratorium') }}" class="btn btn-primary">LABORATORIUM</a>
                         <a href="{{ url('radiologi') }}" class="btn btn-primary">RADIOLOGI</a>
-                        <a href="{{ url('data') }}" class="btn btn-primary">IMPORT DATA</a>
+                        <a href="{{ url('farmasi') }}" class="btn btn-primary">FARMASI</a>
                     </div>
                 </div>
                 {{-- <div class="col-md-6 col-sm-12 text-right">

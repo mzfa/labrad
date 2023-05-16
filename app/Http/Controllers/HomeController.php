@@ -14,9 +14,27 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $data = DB::table('laboratorium')->get();
+        $data = DB::table('laboratorium')->select('no_mr','nama_pasien')->groupBy('no_mr','nama_pasien')->get();
         // dd($data);
-        return view('home', compact('data'));
+        return view('laboratorium', compact('data'));
+    }
+    public function laboratorium($pencarian = null)
+    {
+        $data = DB::table('laboratorium')->where(['no_mr' => $pencarian])->get();
+        
+        return view('laboratorium_detail', compact('data'));
+    }
+    public function farmasi()
+    {
+        $data = DB::table('farmasi')->select('no_mr','nama_pasien')->groupBy('no_mr','nama_pasien')->get();
+        return view('farmasi', compact('data'));
+    }
+    public function farmasi_detail($pencarian = null)
+    {
+        // dd($data);
+        // $pencarian = null;
+        $data = DB::table('farmasi')->where(['no_mr' => $pencarian])->get();
+        return view('farmasi_detail', compact('data'));
     }
     public function radiologi($pencarian = null)
     {
@@ -27,22 +45,4 @@ class HomeController extends Controller
         // }
         return view('radiologi', compact('pencarian'));
     }
-    // public function caridata(Request $request)
-    // {
-    //     $data = DB::table('laboratorium')->limit(100)->get();
-    //     // return view('radiologi', compact('data'));
-    //     return $data;
-    //     if ($request->ajax()) {
-    //         $data = DB::table('laboratorium')->limit(100)->get();
-    //         return Datatables::of($data)
-    //             ->addIndexColumn()
-    //             ->addColumn('action', function($row){
-    //                 $actionBtn = '<a href="javascript:void(0)" class="edit btn btn-success btn-sm">Edit</a> <a href="javascript:void(0)" class="delete btn btn-danger btn-sm">Delete</a>';
-    //                 return $actionBtn;
-    //             })
-    //             ->rawColumns(['action'])
-    //             ->make(true);
-    //     }
-    //     // return view('users');
-    // }
 }

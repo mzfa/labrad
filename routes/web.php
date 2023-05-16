@@ -17,6 +17,9 @@ use App\Http\Controllers\HomeController;
 
 Route::get('/', [\App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/laboratorium', [\App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/laboratorium/detail/{pencarian}', [\App\Http\Controllers\HomeController::class, 'laboratorium'])->name('home');
+Route::get('/farmasi', [\App\Http\Controllers\HomeController::class, 'farmasi'])->name('home');
+Route::get('/farmasi/detail/{pencarian}', [\App\Http\Controllers\HomeController::class, 'farmasi_detail'])->name('home');
 Route::get('/radiologi', [\App\Http\Controllers\HomeController::class, 'radiologi'])->name('radiologi');
 Route::get('/caricata', [\App\Http\Controllers\HomeController::class, 'caricata'])->name('caricata');
 Route::get('/radiologi/{id}', [\App\Http\Controllers\HomeController::class, 'radiologi'])->name('cariradiologi');

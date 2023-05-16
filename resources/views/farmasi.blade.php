@@ -9,7 +9,7 @@
             <!-- Export Datatable start -->
             <div class="card-box mb-30">
                 <div class="pd-20">
-                    <h4 class="text-blue h4">Riwayat Pemeriksaan Lab RS Umum Pekerja</h4>
+                    <h4 class="text-blue h4">Riwayat Obat Farmasi</h4>
                 </div>
                 <div class="pb-20 table-responsive">
                     <table
@@ -18,15 +18,8 @@
                         <thead>
                             <tr>
                                 <th>No MR</th>
-                                <th>Kode Pemeriksaan</th>
-                                <th>Tanggal Pemeriksaan</th>
-                                <th>Nama Pemeriksaan</th>
-                                <th>Unit</th>
-                                <th>Normal</th>
-                                <th>Hasil</th>
-                                <th>Alat</th>
-                                <th>User Validasi</th>
-                                <th>Metode</th>
+                                <th>Nama Pasien</th>
+                                <th>#</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -34,15 +27,8 @@
 
                                 <tr>
                                     <td>{{ $item->no_mr }}</td>
-                                    <td>{{ $item->kode_pemeriksaan }}</td>
-                                    <td>{{ $item->tgl_jam_insert }}</td>
-                                    <td>{{ $item->nama_pemeriksaan }}</td>
-                                    <td>{{ $item->unit }}</td>
-                                    <td>{{ $item->normal }}</td>
-                                    <td>{{ $item->hasil }}</td>
-                                    <td>{{ $item->kode_alat }} - {{ $item->nama_alat }}</td>
-                                    <td>{{ $item->user_validasi }}</td>
-                                    <td>{{ $item->metode }}</td>
+                                    <td>{{ $item->nama_pasien }}</td>
+                                    <td><a href="{{ url('farmasi/detail/'.$item->no_mr) }}" target="_blank" class="btn btn-warning">Detail</a></td>
                                 </tr>
 
                             @endforeach
