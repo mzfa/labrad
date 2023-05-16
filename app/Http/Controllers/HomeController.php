@@ -20,7 +20,7 @@ class HomeController extends Controller
     }
     public function laboratorium($pencarian = null)
     {
-        $data = DB::table('laboratorium')->where(['no_mr' => $pencarian])->get();
+        $data = DB::table('laboratorium')->where(['no_mr' => $pencarian])->orderBy('tgl_jam_insert','desc')->get();
         
         return view('laboratorium_detail', compact('data'));
     }
@@ -33,7 +33,7 @@ class HomeController extends Controller
     {
         // dd($data);
         // $pencarian = null;
-        $data = DB::table('farmasi')->where(['no_mr' => $pencarian])->get();
+        $data = DB::table('farmasi')->where(['no_mr' => $pencarian])->orderBy('tgl_resep','desc')->get();
         return view('farmasi_detail', compact('data'));
     }
     public function radiologi($pencarian = null)
