@@ -106,6 +106,7 @@
                         <a href="{{ url('laboratorium') }}" class="btn btn-primary">LABORATORIUM</a>
                         <a href="{{ url('radiologi') }}" class="btn btn-primary">RADIOLOGI</a>
                         <a href="{{ url('farmasi') }}" class="btn btn-primary">FARMASI</a>
+                        <a href="{{ url('resume_medis') }}" class="btn btn-primary">RESUME MEDIS</a>
                     </div>
                 </div>
                 {{-- <div class="col-md-6 col-sm-12 text-right">

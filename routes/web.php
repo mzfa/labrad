@@ -20,9 +20,11 @@ Route::get('/laboratorium', [\App\Http\Controllers\HomeController::class, 'index
 Route::get('/laboratorium/detail/{pencarian}', [\App\Http\Controllers\HomeController::class, 'laboratorium'])->name('home');
 Route::get('/farmasi', [\App\Http\Controllers\HomeController::class, 'farmasi'])->name('home');
 Route::get('/farmasi/detail/{pencarian}', [\App\Http\Controllers\HomeController::class, 'farmasi_detail'])->name('home');
-Route::get('/radiologi', [\App\Http\Controllers\HomeController::class, 'radiologi'])->name('radiologi');
 Route::get('/caricata', [\App\Http\Controllers\HomeController::class, 'caricata'])->name('caricata');
+Route::get('/radiologi', [\App\Http\Controllers\HomeController::class, 'radiologi'])->name('radiologi');
 Route::get('/radiologi/{id}', [\App\Http\Controllers\HomeController::class, 'radiologi'])->name('cariradiologi');
+Route::get('/resume_medis', [\App\Http\Controllers\HomeController::class, 'resume_medis'])->name('resume_medis');
+Route::get('/resume_medis/{id}', [\App\Http\Controllers\HomeController::class, 'resume_medis'])->name('cariresume_medis');
 Route::post('/logout', function () {
     auth()->logout();
     request()->session()->invalidate();

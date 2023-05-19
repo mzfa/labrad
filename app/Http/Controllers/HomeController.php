@@ -45,4 +45,13 @@ class HomeController extends Controller
         // }
         return view('radiologi', compact('pencarian'));
     }
+    public function resume_medis($pencarian = null)
+    {
+        // dd($data);
+        // $pencarian = null;
+        // if(isset($_GET['cari'])){
+        //     $pencarian = $_GET['cari'];
+        // }
+        return view('resume_medis', compact('pencarian'));
+    }
 }
